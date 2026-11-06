@@ -1,6 +1,6 @@
 { lib
 , btrfs-progs
-, buildGoModule
+, buildGo127Module
 , fetchFromGitHub
 , glibc
 , gpgme
@@ -15,7 +15,7 @@
 , versionData
 ,
 }:
-buildGoModule rec {
+buildGo127Module rec {
   pname = "cri-o";
   version = versionData.cri-o.version;
 

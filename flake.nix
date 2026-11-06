@@ -2,7 +2,7 @@
   description = "";
 
   # Nixpkgs / NixOS version to use.
-  inputs.nixpkgs.url = "nixpkgs/nixos-25.11";
+  inputs.nixpkgs.url = "nixpkgs/nixos-26.05";
 
   outputs =
     { self
@@ -13,40 +13,31 @@
     # see <https://kubernetes.io/releases/>.
     let
       versionList = {
+        # EOL 2027-10-28
+        v1_37 = {
+          version = "1.37.2";
+          sha256 = "sha256-Bbyu5hMQTSrvr/kDFHlRnfz5RIR7ecBfTFOGTCffn5c=";
+          cri-o = {
+            version = "1.37.3";
+            sha256 = "sha256-/L0ap+ujGp2SAyEIxFqnp3tnRgvKSkl194FYDOAfuXg=";
+          };
+        };
+        # EOL 2027-06-28
+        v1_36 = {
+          version = "1.36.6";
+          sha256 = "sha256-4/231gwj+g9A1oDQKIdmJ6lrfquVhTLSxe6hzFuaDFA=";
+          cri-o = {
+            version = "1.36.8";
+            sha256 = "sha256-AzzgN1KXWfBahDyvkQgYdZWjpHMR78ESXZrMxb4ypvg=";
+          };
+        };
         # EOL 2027-02-28
         v1_35 = {
-          version = "1.35.0";
-          sha256 = "sha256-AT1/4RhnVK/mAoNVqPIfSwbzD8VNRqKumOpE0fidJ74=";
+          version = "1.35.10";
+          sha256 = "sha256-LaqG0zNn43JEt04isr8MTtLdH+M59EZcWpC0o64U2FY=";
           cri-o = {
-            version = "1.35.0";
-            sha256 = "sha256-aP3qhD2d1x+VPDifkg9lXgVD38UcongyN6vHkn8oYos=";
-          };
-        };
-        # EOL 2026-10-27
-        v1_34 = {
-          version = "1.34.2";
-          sha256 = "sha256-3rQyoGt9zTeF8+PIhA5p+hHY1V5O8CawvKWscf/r9RM=";
-          cri-o = {
-            version = "1.34.2";
-            sha256 = "sha256-StvHYzWe/LKgA9NQByfti/xAiHMRuRSF8QVsVcw/A+g=";
-          };
-        };
-        # EOL 2026-06-28
-        v1_33 = {
-          version = "1.33.6";
-          sha256 = "sha256-ywmaMRtq/HqkHO4CGspL4AYcn4IbFzAzA0xZRmAgCWE=";
-          cri-o = {
-            version = "1.33.6";
-            sha256 = "sha256-ztKG34tpTI48SFCR1Is6b5ORmlg+JcH/KS4r+2FK/4E=";
-          };
-        };
-        # EOL 2026-02-28
-        v1_32 = {
-          version = "1.32.10";
-          sha256 = "sha256-8N6Qo0Qqg+lTvBzA6H6lOTWSMxUbjQh1U4iqZ2V679c=";
-          cri-o = {
-            version = "1.32.10";
-            sha256 = "sha256-L0G65y2NdYIUs3/l+Ewd4alxhsOfBVU/1SVgjy8M0hI=";
+            version = "1.35.11";
+            sha256 = "sha256-gNoOhjFO5DE9yw1C3FvVsKFKqCfNdMc2dmrbTYh77Ok=";
           };
         };
       };
