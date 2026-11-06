@@ -47,7 +47,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [ cfg.package pkgs.cri-tools ];
+    environment.systemPackages = [ cfg.package config.isogram.kubernetesPackageSet.cri-tools ];
 
     environment.etc."crictl.yaml".source = utils.copyFile "${config.isogram.cri-o.package.src}/crictl.yaml";
     environment.etc."crio/crio.conf.d/00-nix.conf".source = cfgFile;

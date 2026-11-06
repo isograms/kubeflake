@@ -21,6 +21,10 @@
             version = "1.37.3";
             sha256 = "sha256-/L0ap+ujGp2SAyEIxFqnp3tnRgvKSkl194FYDOAfuXg=";
           };
+          cri-tools = {
+            version = "1.37.0";
+            sha256 = "sha256-8TjS7cZXgiaSD7tEQbZmQIQUBkniIHjgAqyMEVqQrd0=";
+          };
         };
         # EOL 2027-06-28
         v1_36 = {
@@ -30,6 +34,10 @@
             version = "1.36.8";
             sha256 = "sha256-AzzgN1KXWfBahDyvkQgYdZWjpHMR78ESXZrMxb4ypvg=";
           };
+          cri-tools = {
+            version = "1.36.0";
+            sha256 = "sha256-Ae0CL/BZdIBzZr+Tttg6sNhn1eS2E1odR6fGpbFRVjI=";
+          };
         };
         # EOL 2027-02-28
         v1_35 = {
@@ -38,6 +46,10 @@
           cri-o = {
             version = "1.35.11";
             sha256 = "sha256-gNoOhjFO5DE9yw1C3FvVsKFKqCfNdMc2dmrbTYh77Ok=";
+          };
+          cri-tools = {
+            version = "1.35.0";
+            sha256 = "sha256-66UDoObxlNBTYJPpo4GoQlV66hXZRf5eLB3ji0KU/Zs=";
           };
         };
       };
@@ -62,6 +74,7 @@
           {
             kubernetes = pkgs.callPackage ./binaries/kubernetes { inherit versionData; };
             cri-o = pkgs.callPackage ./binaries/cri-o { inherit versionData; };
+            cri-tools = pkgs.callPackage ./binaries/cri-tools { inherit versionData; };
             kubectl-ctx = pkgs.callPackage ./binaries/kubectl-ctx { };
           }
         )
@@ -86,6 +99,7 @@
               {
                 kubernetes = final.callPackage ./binaries/kubernetes { inherit versionData; };
                 cri-o = final.callPackage ./binaries/cri-o { inherit versionData; };
+                cri-tools = final.callPackage ./binaries/cri-tools { inherit versionData; };
                 kubectl-ctx = final.callPackage ./binaries/kubectl-ctx { };
               }
             );

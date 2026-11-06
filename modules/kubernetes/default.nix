@@ -3,16 +3,14 @@
 let
   cfg = config.isogram.kubernetes;
   packageSet = config.isogram.kubernetesPackageSet;
-  kubePkgs = [ cfg.package ] ++ (with pkgs; [
+  kubePkgs = [ cfg.package packageSet.cri-tools ] ++ (with pkgs; [
     util-linux
     iproute2
     ethtool
-    cri-o
     iptables-legacy
     socat
     conntrack-tools
     gvisor
-    cri-tools
     ebtables
   ]);
 
